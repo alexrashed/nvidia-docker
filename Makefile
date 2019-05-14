@@ -69,7 +69,7 @@ amzn1: $(addsuffix -amzn1, 18.06.2-ce 18.06.1-ce 18.03.1-ce 17.12.1-ce 17.09.1-c
 	$(DOCKER) cp $$(cat $@.cid):/dist/. $(DIST_DIR)/ubuntu18.04/$(ARCH)
 	$(DOCKER) rm $$(cat $@.cid) && rm $@.cid
 
-18.06.2-ubuntu18.04: ARCH := amd64
+18.06.2-ubuntu18.04: ARCH := arm64
 18.06.2-ubuntu18.04:
 	$(DOCKER) build --build-arg VERSION_ID="18.04" \
                         --build-arg RUNTIME_VERSION="$(RUNTIME_VERSION)+docker18.06.2-1" \
